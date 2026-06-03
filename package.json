@@ -1,0 +1,70 @@
+{
+  "name": "mastra-azure-ai-search",
+  "version": "0.1.0",
+  "description": "Azure AI Search vector store provider for Mastra",
+  "author": "Andres Carmona <valdepeace@gmail.com>",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsup --silent --config tsup.config.ts",
+    "build:watch": "tsup --watch --silent --config tsup.config.ts",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:integration": "vitest run src/vector/integration.test.ts",
+    "test:unit": "vitest run src/vector/index.test.ts",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "prepack": "pnpm build"
+  },
+  "dependencies": {
+    "@azure/core-auth": "^1.7.2",
+    "@azure/search-documents": "^12.0.0"
+  },
+  "peerDependencies": {
+    "@mastra/core": ">=1.0.0-0 <2.0.0-0"
+  },
+  "devDependencies": {
+    "@mastra/core": ">=1.0.0-0 <2.0.0-0",
+    "@types/node": "^22.19.15",
+    "@typescript-eslint/eslint-plugin": "^8.48.0",
+    "@typescript-eslint/parser": "^8.48.0",
+    "dotenv": "^17.3.1",
+    "eslint": "^9.37.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  },
+  "files": [
+    "dist",
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "keywords": [
+    "mastra",
+    "azure",
+    "azure-ai-search",
+    "vector-store",
+    "rag"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  }
+}
