@@ -1,5 +1,5 @@
 {
-  "name": "mastra-azure-ai-search",
+  "name": "@valdepeace/mastra-azure-ai-search",
   "version": "0.1.0",
   "description": "Azure AI Search vector store provider for Mastra",
   "author": "Andres Carmona <valdepeace@gmail.com>",
