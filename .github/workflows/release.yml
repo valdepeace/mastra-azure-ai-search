@@ -33,7 +33,7 @@ jobs:
 
       - run: pnpm build
 
-      - run: publint
+      - run: pnpm exec publint
 
       - run: pnpm publish --no-git-checks --access public
         env:
