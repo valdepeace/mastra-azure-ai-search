@@ -5,11 +5,11 @@ Azure AI Search vector store provider for Mastra. This package provides vector s
 ## Installation
 
 ```bash
-npm install @valdepeace/mastra-azure-ai-search
+npm install mastra-azure-ai-search
 # or
-pnpm add @valdepeace/mastra-azure-ai-search
+pnpm add mastra-azure-ai-search
 # or
-yarn add @valdepeace/mastra-azure-ai-search
+yarn add mastra-azure-ai-search
 ```
 
 ## Community Demo
@@ -47,7 +47,7 @@ Before using this package, you'll need:
 ### Basic Setup with API Key
 
 ```typescript
-import { AzureAISearchVector } from '@valdepeace/mastra-azure-ai-search';
+import { AzureAISearchVector } from 'mastra-azure-ai-search';
 
 const azureVector = new AzureAISearchVector({
   id: 'azure-search-vectors',
@@ -59,7 +59,7 @@ const azureVector = new AzureAISearchVector({
 ### Setup with Azure Credentials
 
 ```typescript
-import { AzureAISearchVector } from '@valdepeace/mastra-azure-ai-search';
+import { AzureAISearchVector } from 'mastra-azure-ai-search';
 import { DefaultAzureCredential } from '@azure/identity';
 
 const azureVector = new AzureAISearchVector({
@@ -74,7 +74,7 @@ const azureVector = new AzureAISearchVector({
 Use `clientOptions` to customize the SearchClient behavior with retry policies, custom headers, or proxy configurations:
 
 ```typescript
-import { AzureAISearchVector } from '@valdepeace/mastra-azure-ai-search';
+import { AzureAISearchVector } from 'mastra-azure-ai-search';
 
 const azureVector = new AzureAISearchVector({
   id: 'azure-search-custom',
@@ -107,7 +107,7 @@ const azureVector = new AzureAISearchVector({
 #### Example: Using with a Proxy
 
 ```typescript
-import { AzureAISearchVector } from '@valdepeace/mastra-azure-ai-search';
+import { AzureAISearchVector } from 'mastra-azure-ai-search';
 import type { PipelinePolicy } from '@azure/core-rest-pipeline';
 
 // Custom proxy policy
@@ -150,7 +150,7 @@ const azureVector = new AzureAISearchVector({
 import { openai } from '@ai-sdk/openai';
 import { Agent } from '@mastra/core/agent';
 import { Memory } from '@mastra/memory';
-import { AzureAISearchVector } from '@valdepeace/mastra-azure-ai-search';
+import { AzureAISearchVector } from 'mastra-azure-ai-search';
 
 // Setup Azure AI Search vector store
 const azureVector = new AzureAISearchVector({
@@ -186,7 +186,7 @@ const agent = new Agent({
 
 ```typescript
 import { Mastra } from '@mastra/core';
-import { AzureAISearchVector } from '@valdepeace/mastra-azure-ai-search';
+import { AzureAISearchVector } from 'mastra-azure-ai-search';
 
 const azureVector = new AzureAISearchVector({
   id: 'azure-search',
@@ -673,7 +673,7 @@ import type {
   AzureAISearchVector, 
   AzureAISearchVectorFilter,
   AzureAISearchVectorOptions 
-} from '@valdepeace/mastra-azure-ai-search';
+} from 'mastra-azure-ai-search';
 
 // Type-safe filter construction
 const filter: AzureAISearchVectorFilter = {
