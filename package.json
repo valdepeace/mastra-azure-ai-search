@@ -13,7 +13,7 @@
         "default": "./dist/index.js"
       },
       "require": {
-        "types": "./dist/index.d.ts",
+        "types": "./dist/index.d.cts",
         "default": "./dist/index.cjs"
       }
     },
@@ -28,7 +28,8 @@
     "test:unit": "vitest run src/vector/index.test.ts",
     "lint": "eslint src",
     "typecheck": "tsc --noEmit",
-    "prepack": "pnpm build"
+    "prepack": "pnpm build",
+    "prepublishOnly": "pnpm typecheck && pnpm lint && pnpm test && publint"
   },
   "dependencies": {
     "@azure/core-auth": "^1.7.2",
@@ -44,6 +45,7 @@
     "@typescript-eslint/parser": "^8.48.0",
     "dotenv": "^17.3.1",
     "eslint": "^9.37.0",
+    "publint": "^0.3.21",
     "tsup": "^8.5.0",
     "typescript": "^5.8.3",
     "vitest": "^3.2.4"
