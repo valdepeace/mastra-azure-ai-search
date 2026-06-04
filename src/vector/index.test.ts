@@ -721,10 +721,12 @@ describe('AzureAISearchVector Unit Tests', () => {
 });
 
 // ==========================================
-// INTEGRATION TESTS (Skip if no credentials)
+// MOCKED INTEGRATION EXAMPLES
 // ==========================================
 
-const describeIntegration = AZURE_AI_SEARCH_ENDPOINT && AZURE_AI_SEARCH_CREDENTIAL ? describe : describe.skip;
+// This file mocks @azure/search-documents at module scope for unit coverage.
+// Real Azure AI Search integration coverage lives in integration.test.ts.
+const describeIntegration = describe.skip;
 
 describeIntegration('AzureAISearchVector Integration Tests', () => {
   let azureVector: AzureAISearchVector;
